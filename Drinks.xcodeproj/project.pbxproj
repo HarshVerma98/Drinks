@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950AD7B226418E7D0038A675 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950AD7B126418E7D0038A675 /* Drinks.swift */; };
+		950AD7B42641935A0038A675 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950AD7B32641935A0038A675 /* Drink.swift */; };
 		951CED9E264118E000B1B080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951CED9D264118E000B1B080 /* AppDelegate.swift */; };
 		951CEDA0264118E000B1B080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951CED9F264118E000B1B080 /* SceneDelegate.swift */; };
 		951CEDA2264118E000B1B080 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951CEDA1264118E000B1B080 /* ListVC.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		950AD7B126418E7D0038A675 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		950AD7B32641935A0038A675 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		951CED9A264118E000B1B080 /* Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951CED9D264118E000B1B080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		951CED9F264118E000B1B080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				951CED9F264118E000B1B080 /* SceneDelegate.swift */,
 				951CEDA1264118E000B1B080 /* ListVC.swift */,
 				951CEDB126411B4C00B1B080 /* DetailVC.swift */,
+				950AD7B32641935A0038A675 /* Drink.swift */,
 				950AD7B126418E7D0038A675 /* Drinks.swift */,
 				951CEDA3264118E000B1B080 /* Main.storyboard */,
 				951CEDA6264118E100B1B080 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				950AD7B226418E7D0038A675 /* Drinks.swift in Sources */,
 				951CEDB226411B4C00B1B080 /* DetailVC.swift in Sources */,
 				951CED9E264118E000B1B080 /* AppDelegate.swift in Sources */,
+				950AD7B42641935A0038A675 /* Drink.swift in Sources */,
 				951CEDA0264118E000B1B080 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

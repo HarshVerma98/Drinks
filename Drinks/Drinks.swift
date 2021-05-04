@@ -12,12 +12,12 @@ class Drinks {
         var drinks: [Drink] //hold array of drink
     }
     
-    struct Drink: Codable {
-        var strDrink = ""
-    }
+   
     let urlString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=A"
     var drinkArray: [Drink] = []
     
+    
+    //MARK:- API Access Method
     func getData(completion: @escaping() -> ()) {
         print("accessing url:- \(urlString)")
         
