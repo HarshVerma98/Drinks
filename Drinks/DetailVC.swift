@@ -21,7 +21,7 @@ class DetailVC: UIViewController {
     
     //MARK:- Variables
     var drink: Drink!
-    
+    var myDrink: [String: String] = [:]
     //MARK:- View Entry point
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class DetailVC: UIViewController {
         glassLabel.text = drink.strGlass
         recipeTxtView.text = drink.strInstructions
         createIngredients()
+        ratingTxtField.text = myDrink[drink.strDrink] ?? "-"
         guard let url = URL(string: drink.strDrinkThumb ?? "") else {
             return
         }
@@ -82,6 +83,14 @@ class DetailVC: UIViewController {
             return
         }
         ingredientTxtView.text += " \(ingredient)\n"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let ratingNumber = Int(ratingTxtField.text!) {
+            if ratingNumber >= 1 && ratingNumber <= 10 {
+                myDrink[drink.strDrink] = String(ratingNumber)
+            }
+        }
     }
     
     //MARK:- Button Actions
