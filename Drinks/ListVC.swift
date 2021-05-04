@@ -24,6 +24,7 @@ class ListVC: UIViewController {
         tableView.dataSource = self
         drink.getData {
             DispatchQueue.main.async {
+                self.navigationItem.title = "Drinks Shown \(self.drink.drinkArray.count)"
                 self.tableView.reloadData()
             }
         }
@@ -48,6 +49,14 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if indexPath.row == drink.drinkArray.count-1 && drink.index < drink.alphabets.count {
+            drink.getData {
+                DispatchQueue.main.async {
+                    self.navigationItem.title = "Drinks Shown \(self.drink.drinkArray.count)"
+                    self.tableView.reloadData()
+                }
+            }
+        }
         cell.textLabel?.text = drink.drinkArray[indexPath.row].strDrink
         cell.detailTextLabel?.text = "-"
         return cell

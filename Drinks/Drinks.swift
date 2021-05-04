@@ -12,18 +12,28 @@ class Drinks {
         var drinks: [Drink] //hold array of drink
     }
     
-   
-    let urlString = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=A"
+   let baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f="
+    var urlString = ""
     var drinkArray: [Drink] = []
-    
-    
+    let alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    var index = 0
+    var isFecthing = false
     //MARK:- API Access Method
     func getData(completion: @escaping() -> ()) {
-        print("accessing url:- \(urlString)")
         
+        guard !isFecthing else {
+            print("Not accessing due to no availabilty of data")
+            completion()
+            return
+        }
+        isFecthing = true
+        print("accessing url:- \(urlString)")
+        urlString = baseUrl + alphabets[index]
+        index += 1
         //create url
         guard let url = URL(string: urlString) else {
             print("Error accessing url")
+            isFecthing = false
             completion()
             return
         }
@@ -39,11 +49,12 @@ class Drinks {
             do {
                 let returned = try JSONDecoder().decode(Return.self, from: data!)
                 print(returned)
-                self.drinkArray = self.drinkArray + returned.drinks
+                self.drinkArray += returned.drinks
             }
             catch {
                 print(error.localizedDescription)
             }
+            self.isFecthing = false
             completion()
         }
         task.resume()
